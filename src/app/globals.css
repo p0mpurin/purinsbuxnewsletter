@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant reader-mode (&:where(.reader-mode, .reader-mode *));
+
+@theme inline {
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+}
+
+/* Reader mode: full-width, larger text, minimal chrome */
+.reader-mode main {
+  max-width: 48rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.reader-mode .reader-mode\:hidden {
+  display: none !important;
+}
+.reader-mode [data-priority] .reader-body {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafaf9;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  padding-top: var(--safe-area-top);
+  padding-bottom: var(--safe-area-bottom);
+  padding-left: var(--safe-area-left);
+  padding-right: var(--safe-area-right);
+}
+
+
+/* Print styles */
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
+  .dark {
+    --background: #ffffff;
+    --foreground: #1c1917;
+  }
+  body {
+    padding: 0;
+  }
+}

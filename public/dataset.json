@@ -1,0 +1,439 @@
+{
+  "week": "2026-09",
+  "sections": [
+    {
+      "title": "PROUD TO BE A PARTNER",
+      "items": [
+        {
+          "title": "ESPRESSO QUALITY",
+          "priority": "MEDIUM",
+          "content": "Per garantire davvero la qualità del nostro espresso, è assolutamente fondamentale non limitarsi al solo tempo di estrazione di 25-30 secondi. Anche se un espresso rientra perfettamente in questo intervallo potrebbe non essere all'altezza dei nostri standard qualitativi. IL TEMPO DI ESTRAZIONE NON È L'UNICO PARAMETRO DA CONTROLLARE. Fate le prove in uno shot di vetro, solo se cuore, corpo e crema rispettano gli standard possiamo accettare il range 25/30 sec.",
+          "attachments": ["Espresso Guide"],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": ["2026_09_p1_i0.jpg", "2026_09_p1_i1.jpg", "2026_09_p1_i2.jpg"],
+          "bullet_points": [
+            "Il tempo di estrazione non è l'unico parametro da controllare",
+            "Verificare cuore, corpo e crema in uno shot di vetro prima di accettare il range 25-30 secondi",
+            "L'espresso deve essere perfetto dal primo all'ultimo cliente"
+          ]
+        },
+        {
+          "title": "UTILIZZO CUP RUBICON",
+          "priority": "MEDIUM",
+          "content": "Per l'uso della 3^generazione di Rubicon: 4oz e 8 oz: Cup Singola; 12 oz e 16 oz: Cup + Sleeve; 20 oz: doppia Cup. Si precisa che queste sono solo delle raccomandazioni/consigli, non obbligatorio.",
+          "attachments": [],
+          "products": [],
+          "contacts": [
+            {
+              "name": "Daniele Musolino",
+              "role": "Product & Customer Experience Trainer",
+              "phone": "3473998151",
+              "email": "daniele.musolino@percassi.com"
+            },
+            {
+              "name": "Maurizio Orfanò",
+              "role": "Product & Customer Experience Trainer",
+              "phone": "3400507490",
+              "email": "maurizio.orfano@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "4oz e 8oz: cup singola",
+            "12oz e 16oz: cup + sleeve",
+            "20oz: doppia cup",
+            "Raccomandazioni non obbligatorie"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OPERATIONS & HR UPDATES",
+      "items": [
+        {
+          "title": "TASTO SOST DECA X 1 SHOT – NO CLOUD",
+          "priority": "HIGH",
+          "content": "La funzionalità di questo tasto è di togliere 1 shot di caffè e aggiungere 1 shot di caffè deca. QUINDI il tasto va selezionato tante volte quanti sono gli shot presenti nella bevanda. ESEMPI: viene richiesto un cappuccino taglia SHORT con caffè deca e dovremo cliccare 1 volta il tasto sost perché c'è 1 solo shot di caffè nelle taglie short; viene richiesto un cappuccino taglia tall con caffè deca e dovremo cliccare 2 volte il tasto sost perché ci sono 2 shot di caffè.",
+          "attachments": [],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": ["2026_09_p2_i1.jpg"],
+          "bullet_points": [
+            "Il tasto sostituisce 1 shot di caffè con 1 shot deca",
+            "Selezionare il tasto per ogni shot di caffè nella bevanda",
+            "Esempio: short (1 shot) → cliccare 1 volta; tall (2 shot) → cliccare 2 volte"
+          ]
+        },
+        {
+          "title": "NUOVA PROCEDURA RICHIESTA SCARPE ANTINFORTUNISTICHE",
+          "priority": "HIGH",
+          "content": "Vi informiamo che il modello di scarpe antinfortunistiche da ordinare è stato aggiornato (pdf in allegato). A partire dai prossimi ordini su Lyreco troverete a catalogo la nuova scarpa, che sostituisce definitivamente il modello precedente. Vi chiediamo pertanto di procedere esclusivamente con l'ordine di questo nuovo modello. Le taglie disponibili e garantite vanno dal 35 al 48. Si segnala che la calzata veste grande: è quindi consigliato ordinare un numero in meno rispetto alla propria taglia abituale. Cogliamo l'occasione per ricordarvi di attenervi alla nuova procedura prevista ogni volta che effettuate un ordine di scarpe. DPI - Richiesta Scarpe Antinfortunistiche – Fill out form",
+          "attachments": ["Safety shoes PDF"],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": ["2026_09_p2_i0.jpg"],
+          "bullet_points": [
+            "Nuovo modello di scarpe antinfortunistiche su Lyreco",
+            "Taglie 35-48 disponibili",
+            "Calzata grande: ordinare un numero in meno",
+            "Usare la procedura 'DPI - Richiesta Scarpe Antinfortunistiche'"
+          ]
+        },
+        {
+          "title": "VENDITA CON TASTIERINO",
+          "priority": "MEDIUM",
+          "content": "Allegato a questa Newsletter e sulla intranet a questo link trovate la procedura aggiornata per l'utilizzo del tastierino in caso di necessità.",
+          "attachments": ["Updated keypad procedure"],
+          "products": [],
+          "contacts": [
+            {
+              "name": "Angelo Buglio",
+              "role": "Retail Manager",
+              "phone": "3482828079",
+              "email": "angelo.buglio@percassi.com"
+            },
+            {
+              "name": "Samuel Napolitano",
+              "role": "Area Manager",
+              "phone": "3427640716",
+              "email": "samuel.napolitano@percassi.com"
+            },
+            {
+              "name": "Francesco Boccia",
+              "role": "Area Manager",
+              "phone": "3426347837",
+              "email": "francesco.boccia@percassi.com"
+            },
+            {
+              "name": "Daniele Coltiletti",
+              "role": "Area Manager",
+              "email": "daniele.coltiletti@percassi.com"
+            },
+            {
+              "name": "Marcello Carlomagno",
+              "role": "Area Manager",
+              "email": "marcello.carlomagno@percassi.com"
+            },
+            {
+              "name": "Claudia Velluto",
+              "role": "District Manager",
+              "email": "claudia.velluto@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "Procedura aggiornata per l'utilizzo del tastierino disponibile in allegato e su intranet"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AGGIORNAMENTO PRODOTTI",
+      "items": [
+        {
+          "title": "NEW ENTRY: BISCOTTI NO GLUTEN",
+          "priority": "HIGH",
+          "content": "Vi informiamo che sono ordinabili a CeDi due nuovi biscotti senza glutine, alla nocciola e all'albicocca del fornitore DNL. Sono biscotti adatti a dieta senza glutine e vegana, mantenendo friabilità e gustosità. Vanno a sostituire i prodotti Palmisano, che quindi vi chiediamo di smaltire.",
+          "attachments": [],
+          "products": [
+            {
+              "code": "SDNLSBK 01.01",
+              "name": "BISCOTTO QUADRATO NOCCIOLA NO GLUTEN",
+              "price_store": "2,70€",
+              "price_airport": "3,00€",
+              "pack_size": "Scatola da 40pz"
+            },
+            {
+              "code": "SDNLSBK 01.02",
+              "name": "BISCOTTO QUADRATO ALBICOCCA NO GLUTEN",
+              "price_store": "2,70€",
+              "price_airport": "3,00€",
+              "pack_size": "Scatola da 40pz"
+            }
+          ],
+          "contacts": [
+            {
+              "name": "Alessia De Francesco",
+              "role": "Category Manager",
+              "phone": "3476102876",
+              "email": "alessia.defrancesco@percassi.com"
+            },
+            {
+              "name": "Federica Cassano",
+              "role": "Category Assistant",
+              "phone": "3421253202",
+              "email": "federica.cassano@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": ["2026_09_p3_i0.jpg", "2026_09_p3_i1.jpg"],
+          "bullet_points": [
+            "Nuovi biscotti senza glutine (nocciola e albicocca) da DNL",
+            "Adatti a dieta senza glutine e vegana",
+            "Sostituiscono i prodotti Palmisano - smaltire le vecchie scorte"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QUALITY",
+      "items": [
+        {
+          "title": "AGGIORNAMENTO BEVANDA VEGETALE SOIA",
+          "priority": "MEDIUM",
+          "content": "In allegato alla NL di oggi troverete la pagina del Libro ingredienti beverage relativa la bevanda vegetale alla soia. In questi giorni gli store hanno iniziato a ricevere il nuovo codice prodotto, non ci sono modifiche a livello di allergeni, sono state apportate modifiche solo a livello di sottoingredienti.",
+          "attachments": ["Bevanda vegetale soia ingredient page"],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "Nuovo codice prodotto per bevanda vegetale soia",
+            "Nessuna modifica agli allergeni",
+            "Modifiche solo a livello di sottoingredienti"
+          ]
+        },
+        {
+          "title": "DOCUMENTAZIONE BISCOTTI SENZA GLUTINE",
+          "priority": "HIGH",
+          "content": "In allegato alla NL di oggi troverete la pagina del Libro ingredienti relativa i due nuovi biscotti senza glutine con farcitura all'albicocca e alla crema di nocciole. Oltre al libro ingredienti troverete anche l'allergen matrix food aggiornato a data odierna. Invito tutti a STAMPARE la documentazione e ad aggiornare, ELIMINANDO le vecchie versioni.",
+          "attachments": ["Biscotti senza glutine ingredient page", "Allergen matrix food"],
+          "products": [],
+          "contacts": [
+            {
+              "name": "Francesco Baccari",
+              "role": "Quality and Food Safety",
+              "phone": "3427574320",
+              "email": "francesco.baccari@percassi.com"
+            },
+            {
+              "name": "Andrea Arcangeli",
+              "role": "Quality and Food Safety Assistant",
+              "phone": "3476205083",
+              "email": "andrea.arcangeli@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "Stampare e aggiornare la documentazione per i nuovi biscotti senza glutine",
+            "Eliminare le vecchie versioni"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MARKETING",
+      "items": [
+        {
+          "title": "REMIND DELIVERY",
+          "priority": "HIGH",
+          "content": "Glovo (25feb – 1 mar) 20% di sconto su: Brown Sugar Oat Shaken Espresso, Cold Brew, Caffè Americano, Starbucks Caffè Latte. Utilizzare tasto sconto delivery 20% (dopo aver selezionato la taglia) e controllare che sia applicato solo alle bevande elencate (tutti gli add vanno aggiunti dopo aver applicato lo sconto). Just Eat (23 feb – 1 mar) 30% di sconto su: Tutte le bevande di campagna al pistacchio. Utilizzare tasto sconto delivery 30% e controllare che sia applicato solo alle bevande elencate. Deliveroo (16 feb-1 mar) voucher di 7€ su minimo ordine di 20€: se vedete sul tablet un ordine (minimo 20€) con uno sconto di 7€ dovete inserire tutti gli item dell'ordine e premere infine il tasto '7E Deliveroo' (verrà applicato uno sconto di 7€). (23 feb-1mar) 20% di sconto su tutto il carrello con ordine minimo di 20€ (usare tasto sconto 20%).",
+          "attachments": [],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": ["2026_09_p4_i1.jpg"],
+          "bullet_points": [
+            "Glovo 25feb-1mar: 20% su bevande selezionate (tasto sconto delivery 20%)",
+            "Just Eat 23feb-1mar: 30% su bevande al pistacchio (tasto sconto delivery 30%)",
+            "Deliveroo 16feb-1mar: voucher 7€ su ordini min 20€ (tasto '7E Deliveroo')",
+            "Deliveroo 23feb-1mar: 20% su tutto il carrello min 20€ (tasto sconto 20%)"
+          ]
+        },
+        {
+          "title": "ORDINE RISMA DI CARTONCINI PER STAMPA",
+          "priority": "HIGH",
+          "content": "Vi chiediamo gentilmente di ordinare da Lyreco una risma di cartoncini bianchi A4 200g/mq. Dovrebbero essere adatti a tutte le stampanti (un controllo prima dell'ordine potrebbe essere la soluzione). Essi dovranno essere utilizzati per la stampa del listino prezzi dei prodotti in avancassa (vi saranno date indicazioni quando sarà necessario aggiornarli).",
+          "attachments": [],
+          "products": [],
+          "contacts": [
+            {
+              "name": "Laura Cavalcante",
+              "role": "Marketing Supervisor",
+              "email": "laura.cavalcante@percassi.com"
+            },
+            {
+              "name": "Silvia Uguccioni",
+              "role": "Marketing Assistant",
+              "email": "silvia.uguccioni@percassi.com"
+            },
+            {
+              "name": "Lorenzo Macconi",
+              "role": "Marketing Assistant",
+              "email": "lorenzo.macconi@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": ["2026_09_p4_i0.jpg"],
+          "bullet_points": [
+            "Ordinare da Lyreco: risma di cartoncini bianchi A4 200g/mq",
+            "Utilizzo: stampa listino prezzi prodotti in avancassa"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LOGISTICA",
+      "items": [
+        {
+          "title": "CALENDARI CONSEGNE E GESTIONE ORDINI",
+          "priority": "MEDIUM",
+          "content": "Vi chiediamo di verificare che gli ordini siano inseriti sulle divisioni SC01 (frozen) e SC02 (fresh/ambient) e se SAP abbia già creato o meno degli ordini in automatico (magari con date errate). In tal caso utilizzare quelli. SAP crea gli ordini in automatico il giorno prima della scadenza di invio dell'ordine. Verificare sempre anche di inserire i quantitativi con il corretto valore di arrotondamento rispetto all'unità di misura. Vi chiediamo inoltre di comunicare i numeri ordine corretti alla mail della logistica.",
+          "attachments": [],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "Ordini su divisioni SC01 (frozen) e SC02 (fresh/ambient)",
+            "Verificare ordini automatici SAP creati il giorno prima della scadenza",
+            "Rispettare arrotondamento unità di misura",
+            "Comunicare numeri ordine a logistica"
+          ]
+        },
+        {
+          "title": "STRISCIATA TEMPERATURA E SEGNALAZIONE IN BOLLA",
+          "priority": "MEDIUM",
+          "content": "Verificare, durante la delivery, lo storico della temperatura degli articoli consegnati, per verificarne il tracciamento in tutto l'arco del trasporto dal magazzino allo store. Se non resa disponibile, chiedete al vettore di stamparvi la strisciata per avere tutta la tracciabilità. Se non viene fornita, vi chiediamo cortesemente di segnalarcelo come anomalia e di fare annotazione in bolla. Vi ricordiamo sempre durante ogni consegna di effettuare i controlli dovuti e se ci dovessero essere differenze di quantità, danneggiamenti, ritardi o temperatura non idonea, di effettuare sempre la segnalazione in bolla firmata e controfirmata dall'autista. Sulla intranet nella sezione Training trovate la checklist da spuntare ad ogni delivery per non dimenticare nessun passaggio. Quando inviate l'anomalia, inviateci sempre in allegato copia dell'annotazione in bolla, in modo tale da essere più efficaci e rapidi.",
+          "attachments": ["Delivery checklist"],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "Verificare strisciata temperatura alla consegna",
+            "Richiederla al vettore se non fornita",
+            "Segnalare anomalie in bolla (firmata/controfirmata)",
+            "Allegare copia annotazione in bolla quando si invia anomalia"
+          ]
+        },
+        {
+          "title": "SCOPERTURE STOCK / ESAURIMENTO STOCK / REINTEGRI",
+          "priority": "HIGH",
+          "content": "Tabella aggiornamento stock.",
+          "attachments": [],
+          "products": [],
+          "contacts": [],
+          "stock_updates": [
+            {
+              "code": "S011168648",
+              "name": "HAZELNUT SYRUP SR 1LT",
+              "status": "Stock limitato, possibili tagli"
+            },
+            {
+              "code": "SCOS620939/V",
+              "name": "PORTAFILTRO CAPSULE CON VALVOLA",
+              "status": "Articolo terminato a DC"
+            },
+            {
+              "code": "SINNMP231053",
+              "name": "SMOOTHIE MANGO MELA FRUTTO PASS 250 ML",
+              "status": "Articolo terminato a DC, uscirà dall'assortimento"
+            },
+            {
+              "code": "SVAN000056765",
+              "name": "DONUT FIOCCO DI NEVE",
+              "status": "Articolo terminato a DC, uscirà dall'assortimento"
+            },
+            {
+              "code": "SINNSB237680",
+              "name": "SMOOTHIE FRAGOLE E BANANA 250",
+              "status": "Articolo terminato a DC, uscirà dall'assortimento"
+            },
+            {
+              "code": "SROTETICHMEDT",
+              "name": "ROTOLO ETICHETTE INSALATA MEDITERRANEA",
+              "status": "Articolo terminato a DC"
+            }
+          ],
+          "images": [],
+          "bullet_points": [
+            "Sciroppo nocciola: stock limitato",
+            "Altri articoli terminati o in uscita dall'assortimento (vedi tabella)"
+          ]
+        },
+        {
+          "title": "CAMBI CODICE",
+          "priority": "HIGH",
+          "content": "I seguenti articoli hanno subito un cambio di codice. D'ora in poi negli ordini dovrà essere inserito quello nuovo.",
+          "attachments": [],
+          "products": [
+            {
+              "old_code": "S011142166",
+              "new_code": "S011177155",
+              "name": "SOY DRINK 1L 12/CS - 2026"
+            },
+            {
+              "old_code": "S011132060",
+              "new_code": "S011175354",
+              "name": "TVNA ENGLISH BREAKFEAST 1CS FY26"
+            }
+          ],
+          "contacts": [
+            {
+              "name": "Dipartimento Logistica",
+              "email": "sirencoffee.logistica@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "S011142166 → S011177155 (SOY DRINK 1L)",
+            "S011132060 → S011175354 (TVNA ENGLISH BREAKFAST)"
+          ]
+        },
+        {
+          "title": "GESTIONE P+",
+          "priority": "LOW",
+          "content": "L'articolo attualmente P+ è il S011129527 Shortbread Biscuits.",
+          "attachments": [],
+          "products": [],
+          "contacts": [],
+          "stock_updates": null,
+          "images": ["2026_09_p6_i0.jpg"],
+          "bullet_points": [
+            "Articolo P+: S011129527 Shortbread Biscuits"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRAINING",
+      "items": [
+        {
+          "title": "MISSION",
+          "priority": "LOW",
+          "content": "Essere il principale fornitore del miglior caffè al mondo, ispirando e nutrendo lo spirito umano, una persona, una tazza e un quartiere alla volta.",
+          "attachments": [],
+          "products": [],
+          "contacts": [
+            {
+              "name": "Daniele Musolino",
+              "role": "Product & Customer Experience Trainer",
+              "phone": "3473998151",
+              "email": "daniele.musolino@percassi.com"
+            },
+            {
+              "name": "Maurizio Orfanò",
+              "role": "Product & Customer Experience Trainer",
+              "phone": "3400507490",
+              "email": "maurizio.orfano@percassi.com"
+            }
+          ],
+          "stock_updates": null,
+          "images": [],
+          "bullet_points": [
+            "Ispirare e nutrire lo spirito umano, una persona, una tazza e un quartiere alla volta"
+          ]
+        }
+      ]
+    }
+  ]
+}
