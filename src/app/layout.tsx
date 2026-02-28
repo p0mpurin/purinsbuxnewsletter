@@ -1,17 +1,26 @@
 import type { Metadata, Viewport } from 'next';
-import { Source_Sans_3, Source_Serif_4 } from 'next/font/google';
+import { Inter, Source_Sans_3, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
 
 const sourceSans = Source_Sans_3({
   variable: '--font-source-sans',
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600', '700'],
+  display: 'swap',
 });
 
 const sourceSerif = Source_Serif_4({
-  variable: '--font-serif',
+  variable: '--font-source-serif',
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -37,7 +46,7 @@ export default function RootLayout({
         <meta name="color-scheme" content="light dark" />
       </head>
       <body
-        className={`${sourceSans.variable} ${sourceSerif.variable} font-sans antialiased min-h-screen`}
+        className={`${inter.variable} ${sourceSans.variable} ${sourceSerif.variable} font-sans antialiased min-h-screen`}
         suppressHydrationWarning
       >
         {children}

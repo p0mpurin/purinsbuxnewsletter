@@ -4,11 +4,11 @@
 @custom-variant reader-mode (&:where(.reader-mode, .reader-mode *));
 
 @theme inline {
-  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-inter), var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, serif;
 }
 
-/* Reader mode: full-width, larger text, minimal chrome */
+/* Reader mode */
 .reader-mode main {
   max-width: 48rem;
   padding-left: 1.5rem;
@@ -22,9 +22,16 @@
   line-height: 1.75;
 }
 
+/* Starbucks brand color tokens */
 :root {
-  --background: #fafaf9;
+  --brand: #00704A;
+  --brand-dark: #1e3932;
+  --brand-light: #d4edda;
+  --brand-muted: #e8f5e9;
+
+  --background: #f9f5f0;
   --foreground: #1c1917;
+
   --safe-area-top: env(safe-area-inset-top, 0px);
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
   --safe-area-left: env(safe-area-inset-left, 0px);
@@ -32,8 +39,13 @@
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafaf9;
+  --brand: #3dcc8e;
+  --brand-dark: #a8edca;
+  --brand-light: #0d2b1f;
+  --brand-muted: #0d2b1f;
+
+  --background: #0d0d0d;
+  --foreground: #f2ede8;
 }
 
 html {
@@ -48,8 +60,40 @@ body {
   padding-bottom: var(--safe-area-bottom);
   padding-left: var(--safe-area-left);
   padding-right: var(--safe-area-right);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
+/* Card fade-in-up animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease both;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #00704A55;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00704A99;
+}
 
 /* Print styles */
 @media print {
@@ -62,5 +106,6 @@ body {
   }
   body {
     padding: 0;
+    background: #fff;
   }
 }

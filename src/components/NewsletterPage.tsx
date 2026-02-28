@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useNewsletter } from '@/context/NewsletterContext';
 import { translations, type TranslationKey } from '@/lib/translations';
 import { normalizeText } from '@/lib/utils';
+import { useReadState, useNewWeekBadge } from '@/lib/useNewsletterState';
 import { Header } from './Header';
 import { Hero } from './Hero';
 import { QuickBar } from './QuickBar';
@@ -20,6 +21,9 @@ const STORAGE_KEY = 'partner-newsletter-filters';
 
 export function NewsletterPage() {
   const { data, setData, lang, setError, setLoading, loading, error } = useNewsletter();
+
+  const { isRead, toggleRead, readCount } = useReadState(data?.week);
+  const { isNewWeek, dismiss: dismissNewWeek } = useNewWeekBadge(data?.week);
 
   const [search, setSearch] = useState('');
   const [filterPriority, setFilterPriority] = useState('');
@@ -39,7 +43,7 @@ export function NewsletterPage() {
       if (o.priority) setFilterPriority(o.priority);
       if (o.section) setFilterSection(o.section);
       if (o.product) setFilterProduct(o.product);
-    } catch (_) {}
+    } catch (_) { }
   }, []);
 
   // Save filters
@@ -55,7 +59,7 @@ export function NewsletterPage() {
           product: filterProduct,
         })
       );
-    } catch (_) {}
+    } catch (_) { }
   }, [search, filterPriority, filterSection, filterProduct]);
 
   const itemMatchesSearch = useCallback(
@@ -113,7 +117,7 @@ export function NewsletterPage() {
     [search, itemMatchesSearch, itemMatchesFilters]
   );
 
-  // Auto-expand sections with search matches so results are visible
+  // Auto-expand sections with search matches
   useEffect(() => {
     if (!search.trim() || !data?.sections) return;
     setSectionsOpen((prev) => {
@@ -138,18 +142,14 @@ export function NewsletterPage() {
   const expandAll = useCallback(() => {
     if (!data?.sections) return;
     const next: Record<string, boolean> = {};
-    data.sections.forEach((_, i) => {
-      next[`section-${i}`] = true;
-    });
+    data.sections.forEach((_, i) => { next[`section-${i}`] = true; });
     setSectionsOpen(next);
   }, [data?.sections]);
 
   const collapseAll = useCallback(() => {
     if (!data?.sections) return;
     const next: Record<string, boolean> = {};
-    data.sections.forEach((_, i) => {
-      next[`section-${i}`] = false;
-    });
+    data.sections.forEach((_, i) => { next[`section-${i}`] = false; });
     setSectionsOpen(next);
   }, [data?.sections]);
 
@@ -169,9 +169,11 @@ export function NewsletterPage() {
       .then((d: NewsletterData) => {
         setData(d);
         setLoading(false);
+        // Smart collapse: only open sections with HIGH priority items
         const open: Record<string, boolean> = {};
-        (d.sections || []).forEach((_, i) => {
-          open[`section-${i}`] = true;
+        (d.sections || []).forEach((sec, i) => {
+          const hasHigh = (sec.items ?? []).some((item) => item.priority === 'HIGH');
+          open[`section-${i}`] = hasHigh;
         });
         setSectionsOpen(open);
       })
@@ -200,31 +202,32 @@ export function NewsletterPage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 px-4">
-        <div className="w-10 h-10 border-2 border-stone-200 dark:border-stone-600 border-t-teal-500 rounded-full animate-spin" />
-        <p className="mt-4 text-stone-500 dark:text-stone-400">{t(lang, 'loading')}</p>
+      <div className="flex flex-col items-center justify-center py-20 px-4">
+        <div
+          className="w-12 h-12 rounded-full border-2 border-stone-200 dark:border-stone-800 animate-spin"
+          style={{ borderTopColor: 'var(--brand)' }}
+        />
+        <p className="mt-5 text-stone-500 dark:text-stone-400 text-sm">{t(lang, 'loading')}</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 px-4 rounded-xl border-2 border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/30">
-        <svg
-          className="w-12 h-12 text-red-500 dark:text-red-400 mb-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
-        </svg>
-        <p className="text-center text-stone-900 dark:text-stone-100 max-w-md">{error}</p>
+      <div className="flex flex-col items-center justify-center py-16 px-4 rounded-2xl border border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-950/20">
+        <div className="w-14 h-14 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-4">
+          <svg className="w-7 h-7 text-red-500 dark:text-red-400" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+        </div>
+        <p className="text-center text-stone-700 dark:text-stone-300 max-w-md text-sm">{error}</p>
         <button
           type="button"
           onClick={() => window.location.reload()}
-          className="mt-4 px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-medium"
+          className="mt-4 px-5 py-2 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
+          style={{ background: 'var(--brand)' }}
         >
           {t(lang, 'retry')}
         </button>
@@ -241,6 +244,35 @@ export function NewsletterPage() {
       <Header />
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-4 sm:py-6 pb-8">
         <Hero />
+
+        {/* New week banner */}
+        {isNewWeek && data?.week && (
+          <div
+            className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl mb-5 text-white animate-fade-in-up"
+            style={{ background: 'var(--brand)' }}
+          >
+            <div className="flex items-center gap-2 text-sm font-medium">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="shrink-0">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+              <span>Week {data.week} — new content since your last visit.</span>
+              <span className="opacity-70 hidden sm:inline text-xs font-normal">Your read progress has been reset.</span>
+            </div>
+            <button
+              type="button"
+              onClick={dismissNewWeek}
+              className="shrink-0 p-1.5 rounded-lg hover:bg-white/20 transition-colors"
+              aria-label="Dismiss"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        )}
+
         <div className="reader-mode:hidden">
           <QuickBar
             search={search}
@@ -253,29 +285,27 @@ export function NewsletterPage() {
           />
         </div>
         <div className="reader-mode:hidden">
-        <FilterDrawer
-          isOpen={filtersOpen}
-          onClose={() => setFiltersOpen(false)}
-          filterSection={filterSection}
-          setFilterSection={setFilterSection}
-          filterProduct={filterProduct}
-          setFilterProduct={setFilterProduct}
-          onClearFilters={clearFilters}
-          sectionOptions={sectionOptions}
-          productOptions={productOptions}
-        />
+          <FilterDrawer
+            isOpen={filtersOpen}
+            onClose={() => setFiltersOpen(false)}
+            filterSection={filterSection}
+            setFilterSection={setFilterSection}
+            filterProduct={filterProduct}
+            setFilterProduct={setFilterProduct}
+            onClearFilters={clearFilters}
+            sectionOptions={sectionOptions}
+            productOptions={productOptions}
+          />
         </div>
 
         {!hasVisibleItems ? (
           <div className="text-center py-12 px-4 rounded-xl border border-dashed border-stone-300 dark:border-stone-600 bg-white dark:bg-stone-900">
-            <p className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-              {t(lang, 'empty_title')}
-            </p>
-            <p className="mt-2 text-stone-500 dark:text-stone-400">{t(lang, 'empty_text')}</p>
+            <p className="text-base font-semibold text-stone-900 dark:text-stone-100">{t(lang, 'empty_title')}</p>
+            <p className="mt-2 text-sm text-stone-500 dark:text-stone-400">{t(lang, 'empty_text')}</p>
             <button
               type="button"
               onClick={clearFilters}
-              className="mt-4 px-4 py-2 rounded-lg border border-stone-200 dark:border-stone-600 hover:bg-stone-100 dark:hover:bg-stone-800 font-medium"
+              className="mt-4 px-4 py-2 rounded-lg border border-stone-200 dark:border-stone-600 hover:bg-stone-100 dark:hover:bg-stone-800 text-sm font-medium"
             >
               {t(lang, 'clear_filters')}
             </button>
@@ -291,6 +321,12 @@ export function NewsletterPage() {
                     (s.items ?? []).filter((item) => itemMatches(item, s.title)).length,
                   ])
                 )}
+                readCounts={Object.fromEntries(
+                  data.sections.map((s, i) => [
+                    `section-${i}`,
+                    readCount(s.title, s.items ?? []),
+                  ])
+                )}
               />
             </div>
             <div className="lg:order-2 flex-1 min-w-0 space-y-4">
@@ -299,7 +335,7 @@ export function NewsletterPage() {
                 const visibleCount = (section.items ?? []).filter((i) =>
                   itemMatches(i, section.title)
                 ).length;
-                const isOpen = sectionsOpen[id] !== false;
+                const isOpen = sectionsOpen[id] === true;
 
                 return (
                   <Section
@@ -308,20 +344,39 @@ export function NewsletterPage() {
                     index={idx}
                     visibleCount={visibleCount}
                     isOpen={isOpen}
-                  onToggle={() => toggleSection(id)}
-                  itemMatches={(item) => itemMatches(item, section.title)}
-                  searchQuery={search}
-                />
-              );
-            })}
+                    onToggle={() => toggleSection(id)}
+                    itemMatches={(item) => itemMatches(item, section.title)}
+                    searchQuery={search}
+                    isRead={(item) => isRead(section.title, item.title)}
+                    onToggleRead={(item) => toggleRead(section.title, item.title)}
+                  />
+                );
+              })}
             </div>
           </div>
         )}
       </main>
-      <footer className="mt-auto py-6 px-4 border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-sm text-stone-500 dark:text-stone-400">
-            {t(lang, 'footer').replace('dataset.json', 'dataset.json')}
+      <footer className="mt-auto py-6 px-4 border-t border-[#00704A22] print:hidden bg-gradient-to-r from-[#f0faf5] to-[#f9f5f0] dark:from-[#0d2b1f] dark:to-[#0d0d0d]">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 100 100" className="shrink-0">
+              <circle cx="50" cy="50" r="50" fill="var(--brand)" />
+              <circle cx="50" cy="50" r="22" fill="none" stroke="white" strokeWidth="6" />
+              <circle cx="50" cy="50" r="9" fill="white" />
+              {[0, 60, 120, 180, 240, 300].map((deg, i) => (
+                <line key={i} x1="50" y1="50"
+                  x2={50 + 29 * Math.cos((deg - 90) * Math.PI / 180)}
+                  y2={50 + 29 * Math.sin((deg - 90) * Math.PI / 180)}
+                  stroke="white" strokeWidth="5" strokeLinecap="round" />
+              ))}
+            </svg>
+            <div>
+              <p className="text-xs font-semibold" style={{ color: 'var(--brand)' }}>Starbucks Partner Newsletter</p>
+              <p className="text-xs text-stone-400">Confidential — Partner Use Only</p>
+            </div>
+          </div>
+          <p className="text-xs text-stone-400 dark:text-stone-500">
+            {t(lang, 'footer')}
           </p>
         </div>
       </footer>
